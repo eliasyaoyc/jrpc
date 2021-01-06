@@ -2,24 +2,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>jrpc</artifactId>
+    <groupId>com.lsnp</groupId>
+    <version>${revision}</version>
+  </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.lsnp</groupId>
-  <artifactId>jrpc</artifactId>
-  <version>${revision}</version>
-  <name>Jrpc</name>
+  <artifactId>jrpc-common</artifactId>
+  <name>Jrpc Common</name>
   <description>👺👺👺Simple Rpc that purpose to learning</description>
 
-  <modules>
-    <module>example</module>
-    <module>core</module>
-    <module>common</module>
-  </modules>
-
-  <packaging>pom</packaging>
 
   <properties>
-    <revision>1.0.0-SNAPSHOT</revision>
   </properties>
 
 </project>
