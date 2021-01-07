@@ -14,8 +14,21 @@
   <name>Jrpc Core</name>
   <description>👺👺👺Simple Rpc that purpose to learning</description>
 
-  <properties>
 
-  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>com.lsnp</groupId>
+      <artifactId>jrpc-common</artifactId>
+    </dependency>
 
+    <dependency>
+      <groupId>com.alipay.sofa</groupId>
+      <artifactId>hessian</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.alipay.sofa</groupId>
+      <artifactId>bolt</artifactId>
+    </dependency>
+  </dependencies>
 </project>

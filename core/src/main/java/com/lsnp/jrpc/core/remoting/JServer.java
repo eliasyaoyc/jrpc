@@ -18,20 +18,57 @@
  * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package com.lsnp.jrpc.core.proxy;
+package com.lsnp.jrpc.core.remoting;
 
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
+import com.alipay.remoting.rpc.RpcServer;
+import com.alipay.remoting.rpc.protocol.UserProcessor;
+import com.lsnp.jrpc.common.exceptions.JException;
+import com.lsnp.jrpc.core.JConfig;
+
+import javax.annotation.Nonnull;
+
+import sun.misc.Contended;
 
 /**
- * {@link ConsumerInterceptor}
+ * {@link JServer}
  *
  * @author <a href="mailto:siran0611@gmail.com">Elias.Yao</a>
- * @version ${project.version} - 2021/1/6
+ * @version ${project.version} - 2021/1/7
  */
-public class ConsumerInterceptor implements InvocationHandler {
+public class JServer implements JRemoteLifeCycle {
 
-  public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-    return null;
+  private static RpcServer rpcServer;
+  private @Contended volatile boolean flag;
+  private @Nonnull final JConfig config;
+
+  public JServer(final JConfig config) {
+    this.config = config;
+  }
+
+  public void init() {
+    rpcServer = new RpcServer(config.getPort());
+    registerUserProcessor(config.getUserProcessor());
+  }
+
+  public void startup() throws JException {
+    if (flag) {
+      throw new JException("server already started, don't startup twice.");
+    }
+    rpcServer.start();
+    flag = true;
+  }
+
+  public void shutdown() {
+    if (flag) {
+      rpcServer.stop();
+    }
+  }
+
+  public @Nonnull RpcServer getServer() {
+    return rpcServer;
+  }
+
+  protected void registerUserProcessor(UserProcessor userProcessor) {
+    rpcServer.registerUserProcessor(userProcessor);
   }
 }

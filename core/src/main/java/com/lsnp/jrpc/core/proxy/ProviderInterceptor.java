@@ -20,12 +20,18 @@
  */
 package com.lsnp.jrpc.core.proxy;
 
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+
 /**
  * {@link ProviderInterceptor}
  *
  * @author <a href="mailto:siran0611@gmail.com">Elias.Yao</a>
  * @version ${project.version} - 2021/1/6
  */
-public class ProviderInterceptor {
+public class ProviderInterceptor implements InvocationHandler {
 
+  public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+    return null;
+  }
 }

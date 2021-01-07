@@ -18,14 +18,17 @@
  * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package com.lsnp.jrpc.core.event;
+package com.lsnp.jrpc.core;
 
 /**
- * {@link JStartupEvent}
+ * {@link Ordered}
  *
  * @author <a href="mailto:siran0611@gmail.com">Elias.Yao</a>
- * @version ${project.version} - 2021/1/6
+ * @version ${project.version} - 2021/1/7
  */
-public class JStartupEvent {
+public interface Ordered {
 
+  default int order() {
+    return 0;
+  }
 }

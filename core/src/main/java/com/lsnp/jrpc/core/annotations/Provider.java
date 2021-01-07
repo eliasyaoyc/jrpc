@@ -18,14 +18,21 @@
  * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package com.lsnp.jrpc.core.register;
+package com.lsnp.jrpc.core.annotations;
+
+import java.lang.annotation.Documented;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 
 /**
- * {@link JRpcRegister}
+ * {@link Provider}
  *
  * @author <a href="mailto:siran0611@gmail.com">Elias.Yao</a>
- * @version ${project.version} - 2021/1/6
+ * @version ${project.version} - 2021/1/7
  */
-public interface JRpcRegister {
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
+
+public @interface Provider {
 
 }

@@ -20,12 +20,14 @@
  */
 package com.lsnp.jrpc.core.filter;
 
+import com.lsnp.jrpc.core.Ordered;
+
 /**
  * {@link Filter}
  *
  * @author <a href="mailto:siran0611@gmail.com">Elias.Yao</a>
  * @version ${project.version} - 2021/1/6
  */
-public interface Filter {
+public interface Filter extends Ordered {
 
 }

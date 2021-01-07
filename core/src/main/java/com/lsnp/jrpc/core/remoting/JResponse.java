@@ -18,20 +18,25 @@
  * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package com.lsnp.jrpc.core.proxy;
+package com.lsnp.jrpc.core.remoting;
 
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
+import java.io.Serializable;
 
 /**
- * {@link ConsumerInterceptor}
+ * {@link JResponse}
  *
  * @author <a href="mailto:siran0611@gmail.com">Elias.Yao</a>
- * @version ${project.version} - 2021/1/6
+ * @version ${project.version} - 2021/1/7
  */
-public class ConsumerInterceptor implements InvocationHandler {
+public class JResponse implements Serializable {
 
-  public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-    return null;
+  public Object result;
+
+  public JResponse(Object result) {
+    this.result = result;
+  }
+
+  public Object getResult() {
+    return result;
   }
 }

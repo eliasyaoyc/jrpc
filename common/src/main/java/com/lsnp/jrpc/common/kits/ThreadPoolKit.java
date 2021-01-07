@@ -18,20 +18,20 @@
  * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package com.lsnp.jrpc.core.proxy;
+package com.lsnp.jrpc.common.kits;
 
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
+import java.util.concurrent.ThreadPoolExecutor;
 
 /**
- * {@link ConsumerInterceptor}
+ * {@link ThreadPoolKit}
  *
  * @author <a href="mailto:siran0611@gmail.com">Elias.Yao</a>
- * @version ${project.version} - 2021/1/6
+ * @version ${project.version} - 2021/1/7
  */
-public class ConsumerInterceptor implements InvocationHandler {
+public abstract class ThreadPoolKit {
 
-  public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+
+  public static ThreadPoolExecutor getThreadPool(){
     return null;
   }
 }

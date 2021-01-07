@@ -18,34 +18,35 @@
  * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package com.lsnp.jrpc.common.exceptions;
+package com.lsnp.jrpc.core.remoting;
+
+import com.alipay.remoting.rpc.RpcClient;
 
 /**
- * {@link JRpcRuntimeException} Exceptions that indicates the jrpc top runtime exception.
+ * {@link JClient}
  *
  * @author <a href="mailto:siran0611@gmail.com">Elias.Yao</a>
- * @version ${project.version} - 2021/1/6
+ * @version ${project.version} - 2021/1/7
  */
-public class JRpcRuntimeException extends RuntimeException {
+public class JClient implements JRemoteLifeCycle {
 
-  private static final long serialVersionUID = 3958323676019199474L;
+  public void init() {
 
-  public JRpcRuntimeException() {
   }
 
-  public JRpcRuntimeException(String message) {
-    super(message);
+  public void startup() {
+
   }
 
-  public JRpcRuntimeException(String message, Throwable cause) {
-    super(message, cause);
+  public void shutdown() {
+
   }
 
-  public JRpcRuntimeException(Throwable cause) {
-    super(cause);
+  public RpcClient getClient() {
+    return null;
   }
 
-  public JRpcRuntimeException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
-    super(message, cause, enableSuppression, writableStackTrace);
+  public JResponse invoke(JRequest req) {
+    return null;
   }
 }

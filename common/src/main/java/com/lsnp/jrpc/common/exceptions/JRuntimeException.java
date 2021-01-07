@@ -21,31 +21,31 @@
 package com.lsnp.jrpc.common.exceptions;
 
 /**
- * {@link JRpcException} Exceptions that indicates the jrpc top exception.
+ * {@link JRuntimeException} Exceptions that indicates the jrpc top runtime exception.
  *
  * @author <a href="mailto:siran0611@gmail.com">Elias.Yao</a>
  * @version ${project.version} - 2021/1/6
  */
-public class JRpcException extends Exception {
+public class JRuntimeException extends RuntimeException {
 
-  private static final long serialVersionUID = 147636550891752940L;
+  private static final long serialVersionUID = 3958323676019199474L;
 
-  public JRpcException() {
+  public JRuntimeException() {
   }
 
-  public JRpcException(String message) {
+  public JRuntimeException(String message) {
     super(message);
   }
 
-  public JRpcException(String message, Throwable cause) {
+  public JRuntimeException(String message, Throwable cause) {
     super(message, cause);
   }
 
-  public JRpcException(Throwable cause) {
+  public JRuntimeException(Throwable cause) {
     super(cause);
   }
 
-  public JRpcException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+  public JRuntimeException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
     super(message, cause, enableSuppression, writableStackTrace);
   }
 }

@@ -18,20 +18,23 @@
  * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package com.lsnp.jrpc.core.proxy;
+package com.lsnp.jrpc.core.register;
 
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
+import com.lsnp.jrpc.core.JLifecycle;
+import com.lsnp.jrpc.core.Url;
+import java.util.Optional;
 
 /**
- * {@link ConsumerInterceptor}
+ * {@link JRegister}
  *
  * @author <a href="mailto:siran0611@gmail.com">Elias.Yao</a>
  * @version ${project.version} - 2021/1/6
  */
-public class ConsumerInterceptor implements InvocationHandler {
+public interface JRegister extends JLifecycle {
 
-  public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-    return null;
-  }
+  void registerService(String serviceName, String version, Url url);
+
+  void unregisterService(String serviceName, String version);
+
+  Optional<Url> getServiceUrl(String serviceName, String version);
 }

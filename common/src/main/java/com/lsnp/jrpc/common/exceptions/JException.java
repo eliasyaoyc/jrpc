@@ -18,20 +18,34 @@
  * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package com.lsnp.jrpc.core.proxy;
-
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
+package com.lsnp.jrpc.common.exceptions;
 
 /**
- * {@link ConsumerInterceptor}
+ * {@link JException} Exceptions that indicates the jrpc top exception.
  *
  * @author <a href="mailto:siran0611@gmail.com">Elias.Yao</a>
  * @version ${project.version} - 2021/1/6
  */
-public class ConsumerInterceptor implements InvocationHandler {
+public class JException extends Exception {
 
-  public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-    return null;
+  private static final long serialVersionUID = 147636550891752940L;
+
+  public JException() {
+  }
+
+  public JException(String message) {
+    super(message);
+  }
+
+  public JException(String message, Throwable cause) {
+    super(message, cause);
+  }
+
+  public JException(Throwable cause) {
+    super(cause);
+  }
+
+  public JException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+    super(message, cause, enableSuppression, writableStackTrace);
   }
 }

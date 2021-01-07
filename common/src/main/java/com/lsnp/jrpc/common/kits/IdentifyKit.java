@@ -18,20 +18,17 @@
  * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package com.lsnp.jrpc.core.proxy;
-
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
+package com.lsnp.jrpc.common.kits;
 
 /**
- * {@link ConsumerInterceptor}
+ * {@link IdentifyKit}
  *
  * @author <a href="mailto:siran0611@gmail.com">Elias.Yao</a>
- * @version ${project.version} - 2021/1/6
+ * @version ${project.version} - 2021/1/7
  */
-public class ConsumerInterceptor implements InvocationHandler {
+public abstract class IdentifyKit {
 
-  public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-    return null;
+  public static String generateKey(String serviceName, String version) {
+    return "";
   }
 }
