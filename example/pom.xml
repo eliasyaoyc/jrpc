@@ -14,7 +14,10 @@
   <description>👺👺👺Simple Rpc that purpose to learning</description>
 
 
-  <properties>
-  </properties>
-
+  <dependencies>
+    <dependency>
+      <groupId>com.lsnp</groupId>
+      <artifactId>jrpc-core</artifactId>
+    </dependency>
+  </dependencies>
 </project>
